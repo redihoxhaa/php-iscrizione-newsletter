@@ -1,5 +1,6 @@
 <?php
 
 session_start();
-
-$_SESSION['email'] = $_GET["email-input"];
+if (isset($_GET["email-input"])) {
+    $_SESSION['email'] = $_GET["email-input"];
+}
