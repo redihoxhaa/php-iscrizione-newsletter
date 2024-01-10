@@ -11,7 +11,7 @@ require_once __DIR__ . '/session.php';
     <div class="container mt-5">
         <!-- Header -->
         <header>
-            <h1 class="text-center text-uppercase">PHP HOTELS</h1>
+            <h1 class="text-center text-uppercase">PHP HOTELS - ZONA SEGRETA</h1>
         </header>
         <!-- /Header -->
 
