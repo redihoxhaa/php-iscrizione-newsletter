@@ -40,20 +40,14 @@ require_once __DIR__ . '/functions.php';
             <form action="index.php" method="get" class="my-4">
                 <label for="email-input" class="form-label">Inserisci la tua email</label>
                 <input type="text" class="form-control" id="email-input" name="email-input" placeholder="email@dominio.com">
-                <?php
-                if ($is_correct) : ?>
-                    <div class="alert alert-success mt-5" role="alert">
-                        Puoi accedere!
-                    </div>
-                <?php endif; ?>
 
                 <?php
-                if ($is_correct === false) : ?>
-                    <div class="alert alert-warning mt-5" role="alert">
-                        Inserisci un'email che contenga '@' e '.' per accedere!
+                if ($email) : ?>
+                    <div class="alert alert-<?php if ($is_correct) : ?>success<?php endif; ?><?php if ($is_correct === false) : ?>warning<?php endif; ?> mt-5" role="alert">
+                        <?php if ($is_correct) : ?>Puoi accedere!<?php endif; ?>
+                        <?php if ($is_correct === false) : ?>Inserisci un'email che contenga '@' e '.' per accedere!<?php endif; ?>
                     </div>
                 <?php endif; ?>
-
 
                 <button class="btn btn-primary mt-5">Submit</button>
             </form>
