@@ -1,11 +1,7 @@
 <?php
 $email = $_GET["email-input"];
 
-if (str_contains($email, '@') && str_contains($email, '.')) {
-    $is_correct = true;
-} else {
-    $is_correct = false;
-}
+require_once __DIR__ . '/functions.php';
 
 ?>
 
@@ -52,7 +48,7 @@ if (str_contains($email, '@') && str_contains($email, '.')) {
                 <?php endif; ?>
 
                 <?php
-                if (!$is_correct) : ?>
+                if ($is_correct === false) : ?>
                     <div class="alert alert-warning mt-5" role="alert">
                         Inserisci un'email che contenga '@' e '.' per accedere!
                     </div>
