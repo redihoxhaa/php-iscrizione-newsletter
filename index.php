@@ -1,5 +1,12 @@
 <?php
 $email = $_GET["email-input"];
+
+if (str_contains($email, '@') && str_contains($email, '.')) {
+    $is_correct = true;
+} else {
+    $is_correct = false;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +44,21 @@ $email = $_GET["email-input"];
             <form action="index.php" method="get" class="my-4">
                 <label for="email-input" class="form-label">Inserisci la tua email</label>
                 <input type="text" class="form-control" id="email-input" name="email-input" placeholder="email@dominio.com">
+                <?php
+                if ($is_correct) : ?>
+                    <div class="alert alert-success mt-5" role="alert">
+                        Puoi accedere!
+                    </div>
+                <?php endif; ?>
+
+                <?php
+                if (!$is_correct) : ?>
+                    <div class="alert alert-warning mt-5" role="alert">
+                        Inserisci un'email che contenga '@' e '.' per accedere!
+                    </div>
+                <?php endif; ?>
+
+
                 <button class="btn btn-primary mt-5">Submit</button>
             </form>
         </main>
